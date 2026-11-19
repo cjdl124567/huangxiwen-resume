@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄熙雯 · 大数据分析师 / 数据运营</title>
+<style>
+  :root{
+    --navy:#10365f;
+    --navy-2:#2a5b96;
+    --navy-3:#4d7cb5;
+    --blue-bg:#e7f0fc;
+    --blue-bg-2:#f3f8fe;
+    --blue-bg-3:#dbe8f9;
+    --line:#d5e2f3;
+    --ink:#26364a;
+    --ink-2:#55677d;
+    --gray:#8698ad;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:#e4ebf5;color:var(--ink);line-height:1.78;
+    -webkit-font-smoothing:antialiased;padding:34px 18px 70px;
+  }
+  .sheet{
+    max-width:900px;margin:0 auto;background:#fff;border-radius:5px;
+    box-shadow:0 18px 46px rgba(16,54,95,.14);overflow:hidden;
+  }
+
+  /* ============ 页眉浅蓝色块 ============ */
+  .head{
+    background:linear-gradient(125deg,#d9e7fa 0%,#eaf2fd 46%,#f6fafd 100%);
+    padding:38px 46px 30px;position:relative;
+    border-bottom:1px solid var(--line);
+  }
+  .head::before{
+    content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:var(--navy);
+  }
+  .head::after{
+    content:"";position:absolute;right:-40px;top:-52px;width:170px;height:170px;
+    border-radius:50%;background:rgba(42,91,150,.07);
+  }
+  .h-row{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:26px;}
+  .kicker{
+    font-size:9.5px;letter-spacing:3.4px;color:var(--navy-2);font-weight:700;
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  h1{
+    font-size:31px;font-weight:700;letter-spacing:7px;color:var(--navy);line-height:1.15;
+    font-family:"Songti SC","STSong",Georgia,serif;
+  }
+  .sub{margin-top:9px;font-size:12.5px;color:var(--ink-2);letter-spacing:.6px;}
+  .sub i{font-style:normal;color:#b6c8de;margin:0 8px;}
+  .sub em{
+    font-style:normal;color:var(--navy);font-weight:600;
+    background:#fff;border:1px solid var(--line);padding:1px 8px;border-radius:2px;
+  }
+  .stick{
+    width:82px;height:82px;flex:0 0 82px;border-radius:50%;background:#fff;
+    border:1px solid #c8d9ee;box-shadow:0 4px 12px rgba(16,54,95,.1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .stick svg{width:44px;height:44px;}
+
+  /* ============ 联系方式卡片 ============ */
+  .contact{
+    padding:18px 46px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+    background:#fff;border-bottom:1px solid var(--line);
+  }
+  .c{
+    display:flex;gap:9px;align-items:flex-start;min-width:0;
+    background:var(--blue-bg-2);border:1px solid #e3edfa;border-radius:3px;padding:9px 11px;
+  }
+  .c svg{width:13px;height:13px;flex:0 0 13px;margin-top:5px;stroke:var(--navy-2);}
+  .c .lbl{font-size:9px;letter-spacing:1.5px;color:var(--gray);text-transform:uppercase;line-height:1.5;}
+  .c .val{font-size:11.8px;color:var(--ink);line-height:1.5;word-break:break-all;}
+
+  /* ============ 正文 ============ */
+  .body{padding:32px 46px 30px;}
+
+  .sec{margin-bottom:28px;}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .sec-h .tag{
+    font-size:11.5px;font-weight:700;letter-spacing:2.4px;color:#fff;
+    background:var(--navy);padding:4px 12px 5px;border-radius:2px;
+  }
+  .sec-h span.en{font-size:9px;letter-spacing:2.2px;color:var(--gray);font-weight:700;text-transform:uppercase;}
+  .sec-h::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);}
+
+  p.lead{
+    font-size:12.8px;color:var(--ink-2);line-height:1.95;
+    padding:14px 18px;background:var(--blue-bg-2);border-left:3px solid var(--navy-3);border-radius:0 3px 3px 0;
+  }
+
+  /* 双列 */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;}
+  .col-h{
+    font-size:10.5px;font-weight:700;letter-spacing:1.8px;color:var(--navy);
+    background:var(--blue-bg);border-radius:2px;padding:5px 10px;margin-bottom:14px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .col-h em{font-style:normal;font-size:8.5px;letter-spacing:1.6px;color:var(--navy-3);font-weight:600;}
+
+  .entry{margin-bottom:18px;padding-left:11px;border-left:2px solid var(--blue-bg-3);}
+  .entry:last-child{margin-bottom:0;}
+  .e-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .e-h{font-size:13px;font-weight:700;color:var(--navy);letter-spacing:.3px;}
+  .e-t{font-size:10.8px;color:var(--gray);white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .e-s{font-size:11.5px;color:var(--navy-2);font-weight:600;margin-top:2px;}
+  ul.l{margin-top:6px;list-style:none;}
+  ul.l li{position:relative;padding-left:11px;font-size:12.2px;color:var(--ink-2);line-height:1.8;margin-bottom:3px;}
+  ul.l li::before{content:"";position:absolute;left:0;top:9px;width:3px;height:3px;border-radius:50%;background:var(--navy-3);}
+  .k{color:var(--navy);font-weight:600;}
+
+  /* 教育独立条 */
+  .edu{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    background:var(--blue-bg-2);border:1px solid #e3edfa;border-radius:3px;padding:13px 16px;
+  }
+  .edu .l{font-size:13px;font-weight:700;color:var(--navy);}
+  .edu .m{font-size:11.5px;color:var(--navy-2);font-weight:600;margin-top:2px;}
+  .edu .r{font-size:10.8px;color:var(--gray);white-space:nowrap;}
+  .edu-note{margin-top:9px;font-size:11.8px;color:var(--ink-2);padding-left:2px;}
+
+  /* 技能 */
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px 30px;}
+  .sk{display:flex;align-items:center;gap:9px;background:var(--blue-bg-2);border-radius:2px;padding:7px 10px;}
+  .sk .nm{flex:0 0 96px;font-size:11.8px;color:var(--ink);}
+  .sk .bar{flex:1;display:flex;gap:3px;}
+  .sk .bar i{flex:1;height:5px;border-radius:1px;background:#dde8f6;}
+  .sk .bar i.on{background:var(--navy-2);}
+  .sk .lv{flex:0 0 auto;font-size:9.5px;color:var(--navy-3);letter-spacing:.4px;font-weight:600;}
+
+  .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;}
+  .tags span{
+    font-size:11.2px;padding:4px 10px;border-radius:2px;letter-spacing:.3px;
+    color:var(--navy-2);background:#fff;border:1px solid var(--blue-bg-3);
+  }
+  .tags span.fill{background:var(--blue-bg);color:var(--navy);font-weight:600;}
+
+  /* 收尾深蓝条 */
+  .end{
+    background:var(--navy);color:rgba(255,255,255,.72);
+    padding:12px 46px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font-size:9px;letter-spacing:2.6px;text-transform:uppercase;
+  }
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .sheet{box-shadow:none;border-radius:0;max-width:none;}
+    .head,.head::before,.contact,.sec-h .tag,.col-h,.end,.sk,.sk .bar i.on{
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;
+    }
+    .sec,.entry{break-inside:avoid;}
+    @page{margin:11mm;}
+  }
+  @media (max-width:760px){
+    body{padding:12px 8px 44px;}
+    .head{padding:26px 20px 22px;}
+    .head::before{width:4px;}
+    .h-row{flex-direction:column-reverse;align-items:flex-start;gap:14px;}
+    .stick{width:62px;height:62px;flex:0 0 62px;}
+    .stick svg{width:34px;height:34px;}
+    h1{font-size:24px;letter-spacing:5px;}
+    .contact{padding:14px 16px;grid-template-columns:1fr 1fr;gap:8px;}
+    .c{padding:8px 9px;}
+    .body{padding:24px 20px 26px;}
+    .cols{grid-template-columns:1fr;gap:0;}
+    .cols > div + div{margin-top:20px;}
+    .skill-grid{grid-template-columns:1fr;}
+    .end{padding:11px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- 页眉：浅蓝色块 -->
+  <header class="head">
+    <div class="h-row">
+      <div>
+        <div class="kicker">Curriculum Vitae · 2026</div>
+        <h1>黄熙雯</h1>
+        <div class="sub">
+          大数据分析师<i>/</i>数据运营<i>·</i><em>实习 / 校园实践</em>
+        </div>
+      </div>
+      <div class="stick">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#10365f" stroke-width="4"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="26" r="13"/>
+          <path d="M50 39v25"/>
+          <path d="M50 48 L31 61"/>
+          <path d="M50 48 L69 61"/>
+          <path d="M50 64 L37 86"/>
+          <path d="M50 64 L63 86"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- 联系方式 -->
+  <div class="contact">
+    <div class="c">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+        <path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/>
+      </svg>
+      <div><div class="lbl">Phone</div><div class="val">13200000000</div></div>
+    </div>
+    <div class="c">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+        <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>
+      </svg>
+      <div><div class="lbl">Email</div><div class="val">xiwen.huang@foxmail.com</div></div>
+    </div>
+    <div class="c">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+        <path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/>
+      </svg>
+      <div><div class="lbl">Location</div><div class="val">广东 · 东莞</div></div>
+    </div>
+    <div class="c">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+        <path d="M12 3l7 3v6c0 4.2-3 7.6-7 9-4-1.4-7-4.8-7-9V6l7-3z"/>
+      </svg>
+      <div><div class="lbl">Political</div><div class="val">共青团员</div></div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- 简介 -->
+    <section class="sec">
+      <div class="sec-h"><span class="tag">个人简介</span><span class="en">Profile</span></div>
+      <p class="lead">
+        大数据管理与应用专业本科在读，系统学习 Python 数据分析、数据库与统计基础，能独立完成数据清洗、分组聚合与可视化呈现。
+        在校担任招生宣传中心视创部干事、流浪动物保护协会成员，习惯把零散的素材、报名与反馈信息整理成可追踪的数据台账，
+        并从中提炼结论支持下一轮内容与活动决策。做事细致、有闭环意识，希望在数据分析与数据运营方向持续积累实战经验。
+      </p>
+    </section>
+
+    <!-- 教育 -->
+    <section class="sec">
+      <div class="sec-h"><span class="tag">教育背景</span><span class="en">Education</span></div>
+      <div class="edu">
+        <div>
+          <div class="l">广东科技学院</div>
+          <div class="m">大数据管理与应用 · 本科（在读 · 大一）</div>
+        </div>
+        <div class="r">2026.09 — 2030.06</div>
+      </div>
+      <div class="edu-note">
+        主修方向：Python 程序设计、数据库原理与应用、统计学基础、数据可视化、管理学　|　在考：计算机二级（Python）、英语四级
+      </div>
+    </section>
+
+    <!-- 经历与实践：双列 -->
+    <section class="sec">
+      <div class="sec-h"><span class="tag">经历与实践</span><span class="en">Experience &amp; Projects</span></div>
+
+      <div class="cols">
+        <div>
+          <div class="col-h">校园经历<em>CAMPUS</em></div>
+
+          <div class="entry">
+            <div class="e-top">
+              <div class="e-h">招生宣传中心 · 视创部</div>
+              <div class="e-t">2026.09 — 至今</div>
+            </div>
+            <div class="e-s">干事</div>
+            <ul class="l">
+              <li>参与招生宣传短视频与图文的策划、拍摄与剪辑，负责<span class="k">素材分类归档</span></li>
+              <li>按周统计各平台播放、点赞、转发与完播数据，整理为<span class="k">内容效果跟踪表</span>，标注高表现选题特征</li>
+              <li>协助招生咨询现场执行，负责问题分类登记与高频问题汇总</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="e-top">
+              <div class="e-h">流浪动物保护协会</div>
+              <div class="e-t">2026.10 — 至今</div>
+            </div>
+            <div class="e-s">成员</div>
+            <ul class="l">
+              <li>参与校内流浪猫登记，记录地点、特征、健康与绝育状态，<span class="k">维护协会救助台账</span></li>
+              <li>用 Excel 数据透视表按区域与月份统计救助数量，为投喂与绝育排期提供依据</li>
+              <li>协助领养日执行，负责报名收集与到场率统计，活动后复盘转化情况</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="col-h">实践项目<em>PROJECTS</em></div>
+
+          <div class="entry">
+            <div class="e-top">
+              <div class="e-h">图书馆借阅行为数据分析</div>
+              <div class="e-t">2026.11</div>
+            </div>
+            <div class="e-s">课程实践 · 独立完成</div>
+            <ul class="l">
+              <li><span class="k">背景</span>　分析不同学院与月份的借阅差异，为采购与推荐位提供参考</li>
+              <li><span class="k">行动</span>　用 pandas 清洗数据，按学院、月份、类目聚合，matplotlib 输出趋势图与类目 TOP10</li>
+              <li><span class="k">结果</span>　定位借阅高峰在开学后 3—5 周，计算机与文学类目占比最高，形成 1 页结论并课堂汇报</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="e-top">
+              <div class="e-h">流浪动物救助数据台账</div>
+              <div class="e-t">2026.10 — 至今</div>
+            </div>
+            <div class="e-s">个人实践 · 协会落地</div>
+            <ul class="l">
+              <li><span class="k">背景</span>　原登记依赖群聊记录，信息分散、无法统计趋势</li>
+              <li><span class="k">行动</span>　设计统一字段表，建立 Excel 台账并配置下拉选项与条件格式</li>
+              <li><span class="k">结果</span>　记录转为可筛选数据表，可输出区域分布与月度趋势，成为协会通用模板</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技能 -->
+    <section class="sec">
+      <div class="sec-h"><span class="tag">专业技能</span><span class="en">Skills</span></div>
+
+      <div class="skill-grid">
+        <div class="sk"><span class="nm">Excel 数据处理</span><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><span class="lv">熟练</span></div>
+        <div class="sk"><span class="nm">Python · pandas</span><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><span class="lv">掌握</span></div>
+        <div class="sk"><span class="nm">数据可视化</span><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><span class="lv">掌握</span></div>
+        <div class="sk"><span class="nm">SQL 查询</span><div class="bar"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><span class="lv">入门</span></div>
+      </div>
+
+      <div class="tags">
+        <span class="fill">matplotlib</span><span class="fill">Power BI</span><span>Tableau</span>
+        <span>剪映</span><span>Photoshop</span><span>PPT 排版</span>
+        <span>普通话二甲备考</span><span>英语四级备考</span>
+        <span class="fill">可实习：寒暑假全天 / 学期每周 2-3 天</span>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="end">
+    <span>Huang Xiwen · Resume</span>
+    <span>Data Analyst / Data Operations</span>
+  </div>
+
+</div>
+</body>
+</html>
